@@ -1,0 +1,45 @@
+public class Main {
+
+public class Practice {
+
+    public static long repeatedString(String s, long n) {
+
+        long strLength = s.length();
+        System.out.println("String length: "+ strLength);
+
+        int count = 0;
+        for (int i = 0; i < strLength; i++){
+            if(s.charAt(i)=='a'){
+                count++;
+            }
+        }
+
+        long repeats = n / strLength;
+        long stringLeft =  n - (strLength*repeats);//VALUE COULD BE ZERO
+
+       int extras = 0;
+        if(stringLeft!=0){
+            for(int i = 0; i < stringLeft; i++){
+                if(s.charAt(i)=='a'){
+                    extras++;
+                }
+            }
+        } else {
+            stringLeft = 1;
+        }
+        long totalCount = (repeats * count) + extras;
+        return totalCount;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(repeatedString("a", 10000000));
+    }
+
+}
+
+ public static void main(String[] args) {
+        System.out.println(repeatedString("a", 10000000));
+    }
+
+
+}
